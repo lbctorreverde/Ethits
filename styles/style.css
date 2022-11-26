@@ -1,20 +1,136 @@
 body {
-    background-color:rgb(53, 111, 186);
-    
+    background-color: rgb(244, 244, 244);
+    padding: 0;
+    margin: 0;
+
 }
 
-.sentro {
+.hero-top {
+    background: linear-gradient(150deg, rgba(255,255,255,1) 0%, rgba(255,215,244,1) 100%);
+    overflow: auto;
+    padding-left: 200px;
+    padding-right: 200px;
+    height: 520px;
+}
+
+
+.hero-top .topNav {
+    flex-direction: row;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
-    flex-direction: column;
-
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.sentro h1 {
-    color: rgb(255, 255, 255);
-    text-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+.topNav .logo-topleft {
+    color: #464646;
+    font-size: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    flex: 1;
+}
+
+
+.topNav .btns-topright {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.btn-login {
+    appearance: button;
+    background-color: #2a2a2a;
+    border: solid transparent;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: din-round, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 13px 16px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 130px;
+    margin-right: 20px;
+    margin-top: 80px;
+    margin-bottom: 70px;
+}
+
+.btn-login:hover:not(:disabled) {
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.7);
+}
+
+.btn-signup {
+    appearance: button;
+    background-color: #2a2a2a;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: din-round, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 13px 16px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 130px;
+
+    margin-right: 20px;
+    margin-top: 80px;
+    margin-bottom: 70px;
+
+}
+
+.btn-signup:hover:not(:disabled) {
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.7);
+}
+
+.hero-top .hero-text {
+    font-family: 'Inter', sans-serif;
+}
+
+.hero-title {
+    font-size: 60px;
+    margin-top: -3px;
+    margin-bottom: 20px;
+
+}
+
+.hero-subtitle {
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.second-div {
+    background-color: rgb(236, 236, 236);
+    overflow: auto;
+    padding-left: 200px;
+    padding-right: 200px;
+    height: 520px;
 }
