@@ -5,11 +5,15 @@ body {
 
 }
 
+h1 {
+    font-family: 'Inter', sans-serif;
+}
+
 .hero-top {
     background: linear-gradient(120deg, rgb(155, 57, 129) 0%, rgb(92, 0, 61) 100%);
     overflow: auto;
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: 15%;
+    padding-right: 15%;
     height: 520px;
 
 }
@@ -114,9 +118,6 @@ body {
     -webkit-filter: brightness(1.2);
 }
 
-.hero-top .hero-text {
-    font-family: 'Inter', sans-serif;
-}
 
 .hero-title {
     color: #eeeeee;
@@ -128,6 +129,7 @@ body {
 }
 
 .hero-subtitle {
+    font-family: 'Inter', sans-serif;
     color: #eeeeee;
     font-size: 30px;
     font-weight: 400;
@@ -135,10 +137,10 @@ body {
 }
 
 .second-div {
-    background: linear-gradient(120deg, rgb(184, 184, 184) 0%, rgb(255, 255, 255) 100%);
+    background: linear-gradient(120deg, rgb(209, 209, 209) 0%, rgb(205, 205, 205) 100%);
     overflow: auto;
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: 15%;
+    padding-right: 15%;
     height: 520px;
     display: flex;
     justify-content: right;
@@ -167,4 +169,40 @@ body {
     font-size: 30px;
 
 
+}
+
+.third-div {
+    background: linear-gradient(120deg, rgb(240, 240, 240) 0%, rgb(218, 218, 218) 100%);
+    overflow: auto;
+    height: 520px;
+    display: flex;
+    padding-left: 15%;
+    padding-right: 15%;
+    flex-direction: row;
+    align-items: center;
+}
+
+.vid-portrait {
+    
+    padding-top: 10%;
+
+}
+
+.vid-desc {
+    padding-left: 5%;  
+    width: 100%; 
+    text-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.vid-desc > .desc-title {
+    font-size: 40px;
+}
+
+.vid-desc > .desc-subtitle {
+    font-size: 30px;
+}
+
+.vid-desc > h3{
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
 }
