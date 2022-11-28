@@ -1,0 +1,144 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(120deg, rgb(155, 57, 129) 0%, rgb(92, 0, 61) 100%);
+    height: 100vh;
+}
+
+h1 {
+    font-family: 'Inter', sans-serif;
+}
+
+.main-div {
+    height: 90vh;
+}
+
+.mainheader{
+    overflow: auto;
+    padding-left: 15%;
+    padding-right: 15%;
+
+
+}
+
+.mainheader > .logo-topleft {
+    color: #eeeeee;
+    font-size: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: 0 3px 3px rgba(0, 0, 0, 1.5);
+    flex: 1;
+    padding-right: 50px;
+}
+
+
+.topNav .btns-topright {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.btn-login {
+    appearance: button;
+    color: #eeeeee;
+    border: solid transparent;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: rgb(119, 52, 101);
+    cursor: pointer;
+    display: inline-block;
+    font-family: din-round, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 13px 16px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 130px;
+    margin-right: 20px;
+    margin-top: 80px;
+    margin-bottom: 70px;
+}
+
+.btn-login:hover:not(:disabled) {
+    filter: brightness(1.1);
+    -webkit-filter: brightness(0.9);
+}
+
+
+.btn-signup {
+    appearance: button;
+    background-color: rgb(32, 32, 32);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #eeeeee;
+    cursor: pointer;
+    display: inline-block;
+    font-family: din-round, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 13px 16px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 130px;
+
+    margin-right: 20px;
+    margin-top: 80px;
+    margin-bottom: 70px;
+
+}
+
+.btn-signup:hover:not(:disabled) {
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.2);
+}
+
+.login-div {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    width: 50vh;
+    height: 50vh;
+    display: inline-block;
+    background-color: aliceblue;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+}
+
+.main-footer {
+    background-color:aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    
+}
