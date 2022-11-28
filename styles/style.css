@@ -30,12 +30,14 @@ h1 {
     text-shadow: 0 3px 3px rgba(0, 0, 0, 1.5);
     flex: 1;
     padding-right: 50px;
+    margin-top: -5vh;
 }
 
 
 .topNav .btns-topright {
     display: flex;
     flex-direction: row;
+    margin-top: -6vh;
 
 }
 
@@ -118,6 +120,9 @@ h1 {
     -webkit-filter: brightness(1.2);
 }
 
+.hero-text {
+    padding-top: 5vh;
+}
 
 .hero-title {
     color: #eeeeee;
