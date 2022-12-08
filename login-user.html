@@ -24,14 +24,14 @@
         </div>
         <div class="login-div">
             <div class="login-form">
-                <h1>Login as agent</h1>  
-                <input type="email" id="email" name="email">
-                <input type="password" id="password" name="password">
+                <h1>Login as a User</h1>  
+                <input type="email" id="email" name="email" placeholder="Email">
+                <input type="password" id="password" name="password" placeholder="Password">
                 <button class="btn-login" role="button">Log In</button>
                 <p>Don't have an account?</p>
-                <button class="btn-signup" role="button">Sign Up</button>
-                <p>Don't have an account?</p>
-                <button class="btn-signup" role="button">Sign Up</button>
+                <button class="btn-signup" id="btn-signupagent" role="button">Register as a User</button>
+                <p>or</p>
+                <button onclick="window.location.href='./login-agent.html';" class="btn-signup" id="btn-loginuser" role="button">Log in as an Agent</button>
             </div>
         </div>
     </main>

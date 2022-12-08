@@ -46,6 +46,14 @@ body {
     flex-direction: column;
 }
 
+input::placeholder {
+    font-size: small;
+    font-weight: 600;
+    opacity: .5;
+
+    
+}
+
 #email {
     color: rgb(100, 100, 100);
     padding: 10px 10px 10px 10px;
@@ -154,7 +162,7 @@ body {
 
 .login-form > h1 {
     font-size: 25px;
-    margin-top: -15%;
+    
     margin-bottom: 10%;
 }
 
