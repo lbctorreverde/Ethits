@@ -1,5 +1,5 @@
-# Ethits
-Thesis, Online Real Estate Agent Finder and Property Value  Prediction
+# Thesis,
+Online Real Estate Agent Finder and Property Value Prediction
 
 ### Git commands
 ```bash
@@ -8,3 +8,5 @@ git commit -m "Text"
 git push origin [branch_name]
 git checkout [main/branch] (To switch to either main or branch)
 ```
+
+### _Everything is currently under construction_
