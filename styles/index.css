@@ -219,18 +219,18 @@ h1 {
 }
 
 #signup-popup {
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
     position: fixed;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
-    padding: 50px;
-    box-shadow: 0 5px 30px rgba(0,0,0,.30);
-    background: #fff;
+    background: rgba(255, 255, 255, 0);
     visibility: hidden;
     opacity: 0;
     transition: 0.5s;
-    
+    padding-top: 15vh;
 }
 
 #signup-popup.active {
@@ -239,3 +239,56 @@ h1 {
     opacity: 1;
     transition: 0.5s;
 }
+
+.popup-container {
+    
+}
+
+
+.flexbox-agent {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #c0c0c0;
+    float: left;
+    width: 40vh;
+    height: 50vh;
+    margin-right: 5px;
+}
+
+.flexbox-user {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #d1d1d1;
+    float: right;
+    width: 40vh;
+    height: 50vh;
+    margin-left: 5px;
+}
+
+.close-btn {
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    text-align: center;
+    align-items: center;
+    background-color: rgba(223, 131, 199, 0.099);
+    width: 85vh;
+    height: 5vh;
+    padding-top: 50vh;
+}
+
+
+
