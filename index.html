@@ -25,7 +25,7 @@
                     <div class="btns-topright">
                         <button onclick="window.location.href='./login-agent.html';" class="btn-login"
                             role="button">Login</button>
-                        <button onclick="toggle()" class="btn-signup" role="button">Sign Up</button>
+                        <button onclick="toggle()" class="btn-signup" id="btn-signup" role="button">Sign Up</button>
                     </div>
                 </div>
                 <div class="hero-text">
@@ -63,6 +63,7 @@
             </div>
         </div>
     </div>
+
     <div class="signup-popup" id="signup-popup">
         <div>
             <div class="popup-container">
@@ -75,11 +76,12 @@
                 <div class="close-btn">
                     <a href="#" onclick="toggle()">Close</a>
                 </div>
-                
+
             </div>
 
         </div>
     </div>
+
     <script type="text/javascript">
         function toggle() {
             var blur = document.getElementById('blur');
@@ -87,6 +89,7 @@
             var popup = document.getElementById('signup-popup');
             popup.classList.toggle('active');
         }
+
     </script>
 
 </body>
