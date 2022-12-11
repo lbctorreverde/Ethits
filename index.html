@@ -23,9 +23,10 @@
                         <h3 class="logo">Logo</h3>
                     </div>
                     <div class="btns-topright">
-                        <button onclick="window.location.href='./login-agent.html';" class="btn-login"
+                        <!-- window.location.href='./login-agent.html'; -->
+                        <button onclick="toggleLoginPopup()" class="btn-login" role="button"
                             role="button">Login</button>
-                        <button onclick="toggle()" class="btn-signup" id="btn-signup" role="button">Sign Up</button>
+                        <button class="btn-signup" id="btn-signup" role="button">Sign Up</button>
                     </div>
                 </div>
                 <div class="hero-text">
@@ -64,17 +65,17 @@
         </div>
     </div>
 
-    <div class="signup-popup" id="signup-popup">
+    <div class="login-popup" id="login-popup">
         <div>
             <div class="popup-container">
                 <div onclick="window.location.href='./login-agent.html';" class="flexbox-agent" style="cursor:pointer">
-                    <h1>Register as agent</h1>
+                    <h1>Log in as an agent</h1>
                 </div>
-                <div onclick="window.location.href='./login-agent.html';" class="flexbox-user" style="cursor:pointer">
-                    <h1>Register as user</h1>
+                <div onclick="window.location.href='./login-user.html';" class="flexbox-user" style="cursor:pointer">
+                    <h1>Log in as a user</h1>
                 </div>
                 <div class="close-btn">
-                    <a href="#" onclick="toggle()">Close</a>
+                    <a href="#" onclick="toggleLoginPopup()">Close</a>
                 </div>
 
             </div>
@@ -83,12 +84,14 @@
     </div>
 
     <script type="text/javascript">
-        function toggle() {
+        function toggleLoginPopup() {
             var blur = document.getElementById('blur');
             blur.classList.toggle('active');
-            var popup = document.getElementById('signup-popup');
+            var popup = document.getElementById('login-popup');
             popup.classList.toggle('active');
         }
+
+        
 
     </script>
 
