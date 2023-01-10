@@ -24,8 +24,8 @@
                     </div>
                     <div class="btns-topright">
                         <!-- window.location.href='./login-agent.html'; -->
-                        <button class="btn-login" onclick="window.location.href='./login.html';" role="button">Login</button>
-                        <button onclick="toggleLoginPopup()" class="btn-signup" id="btn-signup" role="button">Sign Up</button>
+                        <button class="btn-login" onclick="window.location.href='./login.html';" role="button">Login/SignUp</button>
+                        <button class="btn-login" role="button" id="logout">Logout</button>
                     </div>
                 </div>
                 <div class="hero-text">
@@ -47,7 +47,7 @@
             <div>
                 <div class="vid-portrait">
                     <video width="390" height="400" controls>
-                        <source src="./assets/video/XOg3IkNSoyuz-6muj_DX.mp4" type="video/mp4">
+                        <source src="video/XOg3IkNSoyuz-6muj_DX.mp4" type="video/mp4">
                     </video>
                 </div>
 
@@ -64,34 +64,61 @@
         </div>
     </div>
 
-    <div class="login-popup" id="login-popup">
-        <div>
-            <div class="popup-container">
-                <div onclick="window.location.href='./login-agent.html';" class="flexbox-agent" style="cursor:pointer">
-                    <h1>Log in as an agent</h1>
-                </div>
-                <div onclick="window.location.href='./login-user.html';" class="flexbox-user" style="cursor:pointer">
-                    <h1>Log in as a user</h1>
-                </div>
-                <div class="close-btn">
-                    <a href="#" onclick="toggleLoginPopup()">Close</a>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-    <script type="text/javascript">
-        function toggleLoginPopup() {
-            var blur = document.getElementById('blur');
-            blur.classList.toggle('active');
-            var popup = document.getElementById('login-popup');
-            popup.classList.toggle('active');
-        }
-    </script>
-
-    <script src="bundle.js"></script>
 </body>
 
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+    import { getDatabase , set, ref} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+    import { getAuth, onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDToHxAAHM1aRq2mAhn9G7KslLFLdRiEW0",
+      authDomain: "realestaterealtime-22d49.firebaseapp.com",
+      projectId: "realestaterealtime-22d49",
+      storageBucket: "realestaterealtime-22d49.appspot.com",
+      messagingSenderId: "96699334435",
+      appId: "1:96699334435:web:2008d354b7a604cd195696",
+      databaseURL: "https://realestaterealtime-22d49-default-rtdb.asia-southeast1.firebasedatabase.app/"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+    const user = auth.currentUser;
+    onAuthStateChanged(auth, (user) => {
+    if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const displayName = user.firstName;
+        const email = user.email;
+        const uid = user.uid;
+
+        console.log(displayName, email, uid);
+        // ...
+    } else {
+        // User is signed out
+        // ...
+    }
+    });
+
+    logout.addEventListener('click',(e)=>{
+        signOut(auth).then(() => {
+            // Sign-out successful.
+            alert('user loged out');
+        }).catch((error) => {
+        // An error happened.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+            alert(errorMessage);
+        });
+    });
+
+
+</script>
 </html>

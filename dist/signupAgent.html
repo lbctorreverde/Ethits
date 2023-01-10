@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="Stylesheet" type="text/css" href="./styles/login.css">
+    <link rel="Stylesheet" type="text/css" href="./styles/signup.css">
     <!-- FAV FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <title>Login as a User</title>
+    <title>Signup Agent</title>
 </head>
 
 <body>
@@ -23,19 +23,27 @@
             </div>
         </div>
         <div class="login-div">
-            <div class="login-form">
-                <form class="login-form">
-                    <h1>Login</h1>
+            <div class="signUp-form">
+                <form class="signUp-form">
+                    <h1>Register as Agent</h1>
+                    <input type="text" id="fname" name="fname" placeholder="First Name">
+                    <input type="text" id="mname" name="mname" placeholder="Middle Name">
+                    <input type="text" id="lname" name="lname" placeholder="Last Name">
+                    <input type="date" id="bday" name="bday" placeholder="Birthday">
+                    <select name="sex" id="sex">
+                        <option value="" disabled selected>Select Sex</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                      </select>
+                    <input type="number" id="contactNo" name="contactNo" placeholder="Contact No.">
+                    <input type="text" id="agency" name="agency" placeholder="Agency">
+                    <input type="text" id="location" name="location" placeholder="Agency Location">
                     <input type="email" id="email" name="email" placeholder="Email">
                     <input type="password" id="password" name="password" placeholder="Password">
-                    
-                    <input type="submit" class="btn-login" id="login" value="Login">
+                    <input type="file" id="licence" name="license" placeholder="License">
+                    <input type="file" id="documents" name="documents" placeholder="Documents"><br>
+                    <input type="submit" class="btn-login" id="signUp" value="SignUp">
                 </form>
-                <p>Don't have an account?</p>
-                <button class="btn-signup" onclick="window.location.href='signupAgent.html';"  id="btn-signupagent" role="button">Register as an User</button>
-                OR
-                <br><button onclick="window.location.href='signupUser.html';" class="btn-signup" id="btn-loginuser"
-                    role="button">Register as an Agent</button>
             </div>
         </div>
     </main>
@@ -49,13 +57,13 @@
         </footer>
     </div>
 
+    
 </body>
-
 <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-    import { getDatabase , ref, update} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
-    import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
+    import { getDatabase , set, ref} from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
   
@@ -74,28 +82,43 @@
     const app = initializeApp(firebaseConfig);
     const database = getDatabase(app);
     const auth = getAuth();
-    const loginForm = document.querySelector('.login-form')
+    const signupForm = document.querySelector('.signUp-form')
 
-    loginForm.addEventListener('submit', (e)=>{
+    signupForm.addEventListener('submit', (e)=>{
         e.preventDefault()
 
+        var fname = document.getElementById('fname').value;
+        var mname = document.getElementById('mname').value;
+        var lname = document.getElementById('lname').value;
+        var bday = document.getElementById('bday').value;
+        var sex = document.getElementById('sex').value;
+        var contactNo = document.getElementById('contactNo').value;
+        var agency = document.getElementById('agency').value;
+        var location = document.getElementById('location').value;
         var email = document.getElementById('email').value;
         var password = document.getElementById('password').value;
 
-        signInWithEmailAndPassword(auth, email, password)
+        createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
 
-            const dt = new Date();
-            update(ref(database, 'agentInfo/' + user.uid),{
-            last_login: dt,
+            set(ref(database, 'agentInfo/' + user.uid),{
+                firstName: fname,
+                lastName: lname,
+                midName: mname,
+                bday: bday,
+                sex: sex,
+                contactNo: contactNo,
+                agency: agency,
+                agencylocation: location,
+                email: email
             })
             console.log('user logged in: ', user)
-            alert('Successfuly Login')
-            // ...
-            location.href = "index.html";
+            alert('User Created')
 
+            location.href = "login.html";
+            // ...
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -106,18 +129,6 @@
         });
     });
 
-    const user = auth.currentUser;
-    onAuthStateChanged(auth, (user) => {
-    if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        const uid = user.uid;
-        // ...
-    } else {
-        // User is signed out
-        // ...
-    }
-    });
   </script>
 
 </html>
